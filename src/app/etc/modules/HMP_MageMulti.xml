@@ -1,0 +1,8 @@
+<config>
+  <modules>
+    <HMP_MageMulti>
+      <active>true</active>
+      <codePool>local</codePool>
+    </HMP_MageMulti>
+  </modules>
+</config>

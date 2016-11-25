@@ -1,0 +1,15 @@
+diff --git a/app/Mage.php b/app/Mage.php
+index 6cf9d2a..952c58d 100644
+--- a/app/Mage.php
++++ b/app/Mage.php
+@@ -714,8 +714,8 @@ final class Mage
+      */
+     protected static function _setIsInstalled($options = array())
+     {
+-        if (isset($options['is_installed']) && $options['is_installed']) {
+-            self::$_isInstalled = true;
++        if (isset($options['is_installed'])) {
++            self::$_isInstalled = (boolean)$options['is_installed'];
+         }
+     }
+ 

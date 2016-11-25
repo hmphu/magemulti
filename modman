@@ -1,0 +1,8 @@
+src/app/MageMulti.php                                     app/MageMulti.php 
+src/app/code/local/HMP/MageMulti                          app/code/local/HMP/MageMulti    
+src/app/etc/modules/HMP_MageMulti.xml                     app/etc/modules/HMP_MageMulti.xml            
+@shell  cp --force $MODULE/src/mcron.php $PROJECT/mcron.php
+@shell  cp --force $MODULE/src/mcron.sh $PROJECT/mcron.sh
+@shell  cd $PROJECT && patch -p1 -f < $MODULE/modify_is_installed_function.diff
+@shell  cd $PROJECT && patch -p1 -f < $MODULE/modify_index.diff
+@shell  rm -rf \$PROJECT/var/cache/*

@@ -1,0 +1,16 @@
+<config>
+    <modules>
+        <HMP_MageMulti>
+            <version>0.1</version>
+        </HMP_MageMulti>
+    </modules>
+    <global>
+        <models>
+            <install>
+                <rewrite>
+                    <installer_config>HMP_MageMulti_Model_Mage_Install_Installer_Config</installer_config>
+                </rewrite>
+            </install>
+        </models>
+    </global>
+</config>

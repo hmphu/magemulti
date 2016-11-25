@@ -1,0 +1,16 @@
+{
+    "name": "hmphu/magemulti",
+    "type": "magento-module",
+    "description": "Something that similar to Magento Go service :). This extension allow you host multiple clients on the same Magento codebase",
+    "license": "OSL 3.0",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors": [
+        {
+            "name": "Phu Hoang",
+            "email": "me@hmphu.com",
+            "role": "Author/Maintainer"
+        }
+    ]
+}

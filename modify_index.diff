@@ -1,0 +1,26 @@
+diff --git a/index.php b/index.php
+index 252b133..f8dee5f 100644
+--- a/index.php
++++ b/index.php
+@@ -75,9 +75,18 @@ if (isset($_SERVER['MAGE_IS_DEVELOPER_MODE'])) {
+ umask(0);
+ 
+ /* Store or website code */
+-$mageRunCode = isset($_SERVER['MAGE_RUN_CODE']) ? $_SERVER['MAGE_RUN_CODE'] : '';
++// $mageRunCode = isset($_SERVER['MAGE_RUN_CODE']) ? $_SERVER['MAGE_RUN_CODE'] : '';
+ 
+ /* Run store or run website */
+-$mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
++// $mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
+ 
+-Mage::run($mageRunCode, $mageRunType);
++// Mage::run($mageRunCode, $mageRunType);
++
++require_once MAGENTO_ROOT . '/app/MageMulti.php';
++// aws load balancers are dumb
++if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
++    $_SERVER['HTTPS']       = 'on';
++    $_SERVER['SERVER_PORT'] = 443;
++}
++
++Mage::run(MageMulti::getRunCode(), MageMulti::getRunType(), MageMulti::getRunOptions());
