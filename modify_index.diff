@@ -1,8 +1,8 @@
 diff --git a/index.php b/index.php
-index 252b133..f8dee5f 100644
+index 252b133..c40cb67 100644
 --- a/index.php
 +++ b/index.php
-@@ -75,9 +75,18 @@ if (isset($_SERVER['MAGE_IS_DEVELOPER_MODE'])) {
+@@ -75,9 +75,12 @@ if (isset($_SERVER['MAGE_IS_DEVELOPER_MODE'])) {
  umask(0);
  
  /* Store or website code */
