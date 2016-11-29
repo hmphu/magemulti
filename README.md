@@ -106,3 +106,21 @@ Most of this is typical Magento Apache config. The important lines are: `SetEnv 
 
 *When you setup new domain and visit the site it will open the Magento Installation page and you can continue [setup your magento site](http://devdocs.magento.com/guides/m1x/install/installing_install.html). The module will create new directories and new `local.xml` file under the `clients` folder*
 
+## IV. CRON configuration
+
+Because Magento need to known the `CLIENT_CODE` to run exactly site so I had to created new `mcron.php` and `mcron.sh` files. This will looks for folders in `clients` folder which are `CLIENT_CODE`
+
+So you have to setup your crontab to run `mcron.php` and `mcron.sh` instead of the default magento files (they are `cron.php` and `cron.sh`)
+
+Example:
+
+```bash
+*/5 * * * * sh /var/www/mcron.sh
+```
+
+## V. To Do
+
+- Tests and CI
+- Shell script
+- Make it work with [Aoe_Scheduler](https://github.com/AOEpeople/Aoe_Scheduler) module
+- Bash script to create new client sites
