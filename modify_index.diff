@@ -17,10 +17,4 @@ index 252b133..f8dee5f 100644
 +// Mage::run($mageRunCode, $mageRunType);
 +
 +require_once MAGENTO_ROOT . '/app/MageMulti.php';
-+// aws load balancers are dumb
-+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
-+    $_SERVER['HTTPS']       = 'on';
-+    $_SERVER['SERVER_PORT'] = 443;
-+}
-+
 +Mage::run(MageMulti::getRunCode(), MageMulti::getRunType(), MageMulti::getRunOptions());
