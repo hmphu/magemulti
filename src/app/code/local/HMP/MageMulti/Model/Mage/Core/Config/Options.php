@@ -18,7 +18,7 @@ class HMP_MageMulti_Model_Mage_Core_Config_Options extends Mage_Core_Model_Confi
         parent::_construct();
         $this->_baseData = $this->_data;
 
-        $code    = $this->getClientCode();
+        $code    = MageMulti::getClientCode();
         $appRoot = Mage::getRoot();
         $root    = dirname($appRoot);
         $this->_data['app_dir']     = $appRoot;
@@ -42,7 +42,7 @@ class HMP_MageMulti_Model_Mage_Core_Config_Options extends Mage_Core_Model_Confi
     }
 
     public function getLocalEtcDir(){
-        return $this->_data['base_dir']. DS . MageMulti::CLIENT_DIR . DS . $this->getClientCode(). DS . 'etc'; 
+        return $this->_data['base_dir']. DS . MageMulti::CLIENT_DIR . DS . MageMulti::getClientCode(). DS . 'etc'; 
     }
 
     /**
@@ -65,7 +65,7 @@ class HMP_MageMulti_Model_Mage_Core_Config_Options extends Mage_Core_Model_Confi
     public function getVarDir()
     {
         $dir = isset($this->_data['var_dir']) ? $this->_data['var_dir']
-            : $this->_data['base_dir'] . DS .  MageMulti::CLIENT_DIR . DS . $this->getClientCode() . DS . 'var' ;
+            : $this->_data['base_dir'] . DS .  MageMulti::CLIENT_DIR . DS . MageMulti::getClientCode() . DS . 'var' ;
         if (!$this->createDirIfNotExists($dir)) {
             Mage::throwException('Unable to find writable var_dir');
         }
