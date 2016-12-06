@@ -1,3 +1,4 @@
+src/minstall.php                                          minstall.php 
 src/app/MageMulti.php                                     app/MageMulti.php 
 src/app/code/local/HMP/MageMulti                          app/code/local/HMP/MageMulti    
 src/app/etc/modules/HMP_MageMulti.xml                     app/etc/modules/HMP_MageMulti.xml            
